@@ -1,0 +1,27 @@
+<% var count = 0; %>
+<div class="container historyform">
+   <form action="/" method="post">
+      <h4>Write a comment</h4>
+      <div id="comm" class="form-group">
+         <textarea onclick="showCommentBox()" class="form-control" name="content" rows="3" cols="80" placeholder="Click to write a comment"></textarea>
+         <div id="details" class="hidden">
+            <label>Fill in your details below</label>
+            <input class="form-control" type="text" name="name" value="" placeholder="Enter your full name" required>
+            <input class="form-control" type="email" name="email" value="" placeholder="Enter your Email address" required>
+            <button class="btn" type="submit" name="button">Post</button>
+         </div>
+      </div>
+   </form>
+   <% comments.forEach(function(elements){ %>
+   <% ++count %>
+   <% }); %>
+   <h4><%= count %> Comments</h4>
+   <% comments.forEach(function(elements){ %>
+   <ul>
+      <h5><%= elements.name %>  <span class="postDay">On     ,<%= day %></span></h5>
+      <ul>
+         <label><%= elements.content %></label>
+      </ul>
+   </ul>
+   <% }); %>
+</div>
