@@ -15,11 +15,11 @@ app.use(express.static("public"));
 
 app.use('/images', express.static('images'));
 
-
 mongoose.connect("mongodb://localhost:27017/minorcommentsDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+
 
 const minorcommSchema = {
   name: "String",
